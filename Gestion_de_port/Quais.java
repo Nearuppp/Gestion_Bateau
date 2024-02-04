@@ -18,19 +18,19 @@ public class Quais {
 
     public boolean ajouterBateau(){
         if(quaisOcc < nbQuais){
-            System.out.println("Bateau ajouter au quais!");
+            System.out.println("Bateau ajouter au quais!                                        +1");
             quaisOcc++;
             System.out.println("Nombre de Quai Occupe = "+quaisOcc + "/3");
             return true;
         }else{
-            System.out.println("Les quais sont rempli"+ quaisOcc+"/3");
+            System.out.println("Les quais sont rempli"+ quaisOcc+"/3! Acces refuse.");
             return false;
         }
     }
 
     public void retraitBateau(){
         if (quaisOcc > 0) {
-            System.out.println("Bateau retirer du quais!");
+            System.out.println("Bateau retirer du quais!                                        -1");
             quaisOcc--;
             System.out.println("Nombre de quais occupe : "+quaisOcc+"/3");
         }

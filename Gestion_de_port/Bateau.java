@@ -35,16 +35,15 @@ public class Bateau {
             arrivePort = a;
         }
     }
-    public void quitter( ){
+    public void quitter(Port a){
         //quitter port quaisOcc--
-        //port departPort()=arrivePort 
-        //port arrivePort()=nouvelleDestination
+        a.retirerBateau();
         System.out.print("Le bateau se deplace de sa position! ");
-        if (!enMer) {
+        /*if (!enMer) {
             departPort = arrivePort;
             arrivePort.retirerBateau();
             enMer = true;
-        }
+        }*/
     }
     public float distance(){
         float distance;
@@ -58,6 +57,31 @@ public class Bateau {
             return distance;
             
         }
+    }
+
+    public float distance(double x, double y){
+        float distance;
+        if (enMer || departPort == null || arrivePort == null) {
+            return -1; // Not applicable
+        } else {
+            double distanceX = departPort.getX() - arrivePort.getX();
+            double distanceY = departPort.getY() - arrivePort.getY();
+            distance = (float) Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+            System.out.println("Le bateau a fait une distance de " + distance +"!\n\n");
+            return distance;
+            
+        }
+    }
+
+    public float distance(double x1,double x2,double y1,double y2){
+        float distance;
+            double distanceX = x1 - x2;
+            double distanceY = y1 - y2;
+            distance = (float) Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+            System.out.println("Le bateau a fait vrai une distance de " + distance +"!\n\n");
+            return distance;
+            
+        
     }
 
     // Constructor and other methods...
